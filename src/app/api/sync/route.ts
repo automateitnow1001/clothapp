@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+
+export const runtime = "edge";
 import { PominaConnector } from "@/connectors/pomina";
 import { PuryConnector } from "@/connectors/pury";
 import { ChetaJeansConnector } from "@/connectors/cheta-jeans";
