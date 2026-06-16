@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Theme Colors */
+  --brand-primary: #111111;        /* Solid Charcoal / Black */
+  --brand-secondary: #eeeae9;      /* Warm Alabaster / Pinkish-Grey */
+  --brand-accent: #a87a76;         /* Dusty Rose / Clay */
+  --brand-accent-hover: #936864;   /* Darker Dusty Rose */
+  --brand-bg-light: #fbfaf9;       /* Creamy off-white page background */
+  --brand-bg-card: #ffffff;
+  
+  /* Text & Borders */
+  --brand-text-dark: #1a1a1a;
+  --brand-text-muted: #6b7280;
+  --brand-border: #e5e7eb;
+  --brand-border-focus: #a87a76;
+
+  /* Feedback States */
+  --brand-success: #059669;        /* Deep Emerald */
+  --brand-success-bg: #ecfdf5;
+  --brand-warning: #d97706;        /* Muted Amber */
+  --brand-warning-bg: #fffbeb;
+  --brand-error: #dc2626;          /* Crimson Red */
+  --brand-error-bg: #fef2f2;
+}
+
+@theme {
+  /* Color Mappings */
+  --color-primary: var(--brand-primary);
+  --color-secondary: var(--brand-secondary);
+  --color-accent: var(--brand-accent);
+  --color-accent-hover: var(--brand-accent-hover);
+  --color-bg-light: var(--brand-bg-light);
+  --color-bg-card: var(--brand-bg-card);
+  --color-text-dark: var(--brand-text-dark);
+  --color-text-muted: var(--brand-text-muted);
+  --color-border-brand: var(--brand-border);
+  --color-border-focus: var(--brand-border-focus);
+  
+  /* State Mappings */
+  --color-success: var(--brand-success);
+  --color-success-bg: var(--brand-success-bg);
+  --color-warning: var(--brand-warning);
+  --color-warning-bg: var(--brand-warning-bg);
+  --color-error: var(--brand-error);
+  --color-error-bg: var(--brand-error-bg);
+  
+  /* Fonts mapping */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui;
+  
+  /* Animations */
+  --animate-pulse-slow: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Base resets & custom scrollbar */
+body {
+  background-color: var(--brand-bg-light);
+  color: var(--brand-text-dark);
+  font-family: var(--font-inter), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom premium elements styling */
+input, select, textarea {
+  border: 1px solid var(--brand-border);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #ffffff;
+  color: var(--brand-text-dark);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--brand-border-focus);
+  box-shadow: 0 0 0 2px rgba(168, 122, 118, 0.2);
+}
+
+/* Custom skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: loading-skeleton 1.5s infinite;
+  border-radius: 0.375rem;
+}
+
+@keyframes loading-skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Premium Card hover effects */
+.hover-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+}
